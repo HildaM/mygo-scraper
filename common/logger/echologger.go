@@ -1,3 +1,4 @@
+// From: https://github.com/plutov/echo-logrus
 package logger
 
 import (
@@ -7,6 +8,10 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/gommon/log"
 	"github.com/sirupsen/logrus"
+)
+
+var (
+	Logger *logrus.Logger
 )
 
 // Logrus : implement Logger

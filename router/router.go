@@ -36,12 +36,31 @@ func Init() {
 			echo.HeaderContentLength,
 			echo.HeaderContentType,
 		},
+		AllowCredentials: true,
+		AllowOriginFunc: func(origin string) (bool, error) {
+			return true, nil
+		},
+		MaxAge: 7200, // 2 hour
 	}))
 
-	// TODO Router 设置
+	// Router 注册
+	initRoutes(e)
 
 	// 启动HTTP服务器
 	e.Logger.Fatal(
 		e.Start(":" + strconv.Itoa(config.AppConfig.HttpPort)),
 	)
+}
+
+// 统一路由注册
+var registry []func(e *echo.Echo)
+
+func RegisterRoute(registerFunc func(e *echo.Echo)) {
+	registry = append(registry, registerFunc)
+}
+
+func initRoutes(e *echo.Echo) {
+	for _, register := range registry {
+		register(e)
+	}
 }

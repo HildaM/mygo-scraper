@@ -1,17 +1,15 @@
 package logger
 
 import (
+	"MyGo-scraper/common"
 	"MyGo-scraper/common/config"
 	"io"
 	"os"
 	"path/filepath"
 	"time"
 
+	"github.com/labstack/echo/v4"
 	"github.com/sirupsen/logrus"
-)
-
-var (
-	Logger *logrus.Logger
 )
 
 func Init() {
@@ -39,4 +37,12 @@ func Init() {
 
 	// 设置日志级别为Info以上（默认级别）
 	Logger.SetLevel(logrus.InfoLevel)
+}
+
+func GetTraceLogger(c echo.Context) *TraceLogger {
+	trace, ok := c.Get(common.CTX_TRACE_LOGGER).(TraceLogger)
+	if ok {
+		return &trace
+	}
+	return nil
 }
