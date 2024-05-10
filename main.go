@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"MyGo-scraper/common/config"
+	"MyGo-scraper/common/initializer"
+	"MyGo-scraper/common/logger"
+)
 
 func main() {
-	fmt.Println("Hello MyGo")
+	logger.Init()
+	config.Init()
+	initializer.Init()
+
 }
