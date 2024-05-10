@@ -11,7 +11,6 @@ func init() {
 	RegisterRoute(func(e *echo.Echo) {
 		// 在Echo中设置静态文件的目录
 		e.Static("/", "static")
-
 		e.GET("/", controller.GetScrapeHTML, logger.Hook())
 	})
 }
