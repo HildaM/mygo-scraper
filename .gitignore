@@ -4,3 +4,4 @@ config/*.yaml
 output
 *.tar.gz
 web
+.VSCodeCounter
