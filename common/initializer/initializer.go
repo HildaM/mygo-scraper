@@ -3,7 +3,7 @@ package initializer
 import (
 	"fmt"
 
-	"github.com/sirupsen/logrus"
+	l "MyGo-scraper/common/logger"
 )
 
 type Initializer struct {
@@ -21,10 +21,10 @@ func init() {
 func Init() {
 	for _, v := range initList {
 		if err := v.Func(); err != nil {
-			logrus.Error(fmt.Sprintf("Initializer failed, name: %v, err: %v", v.Name, err))
+			l.Logger.Error(fmt.Sprintf("Initializer failed, name: %v, err: %v", v.Name, err))
 			panic(err)
 		}
-		logrus.Info(fmt.Sprintf("Initializer success, name: %v", v.Name))
+		l.Logger.Info(fmt.Sprintf("Initializer success, name: %v", v.Name))
 	}
 }
 

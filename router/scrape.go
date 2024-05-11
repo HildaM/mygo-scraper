@@ -15,6 +15,7 @@ func init() {
 
 func scraperRouter(e *echo.Echo) {
 	v1 := e.Group("/v1")
+	// 对v1下的请求做统一的日志收集
 	v1.Use(middleware.LoggerMiddleware)
 
 	v1.POST("/scrape", controller.PostScrape)

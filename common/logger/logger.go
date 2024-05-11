@@ -2,7 +2,6 @@ package logger
 
 import (
 	"MyGo-scraper/common"
-	"MyGo-scraper/common/config"
 	"io"
 	"os"
 	"path/filepath"
@@ -13,7 +12,7 @@ import (
 )
 
 func Init() {
-	rootDir := config.GetRootDir()
+	rootDir := common.GetRootDir()
 
 	// 创建一个新的logrus Logger实例
 	Logger = logrus.New()

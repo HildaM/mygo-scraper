@@ -20,7 +20,7 @@ func Init() {
 	// 使用Recovery中间件来恢复panic
 	e.Use(middleware.Recover())
 
-	// CORS
+	// CORS 跨域设置
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
 		AllowMethods: []string{
 			http.MethodGet,

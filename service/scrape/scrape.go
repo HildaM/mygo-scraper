@@ -27,3 +27,7 @@ func NewScrape(headless, readability, rewiseDomain bool) *Scrape {
 func (s *Scrape) Run(ctx echo.Context, rawUrl string) (*ScrapeResult, error) {
 	return nil, nil
 }
+
+func (s *Scrape) BatchRun(ctx echo.Context, urlList []string) ([]ScrapeResult, error) {
+	return nil, nil
+}
