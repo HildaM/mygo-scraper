@@ -3,6 +3,7 @@ package scrape
 import (
 	"MyGo-scraper/common/config"
 	"MyGo-scraper/common/initializer"
+	f "MyGo-scraper/service/filter"
 	"net/http"
 	"net/url"
 	"time"
@@ -10,7 +11,7 @@ import (
 
 var (
 	scrapeClient *http.Client
-	filter       *Filter
+	filter       *f.Filter
 )
 
 func initScrape() error {
@@ -36,7 +37,7 @@ func initScrape() error {
 		}
 	}
 
-	filter = NewFilter(config.AppConfig.Filter)
+	filter = f.NewFilter(config.AppConfig.Filter)
 	return nil
 }
 

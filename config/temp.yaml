@@ -1,0 +1,11 @@
+http_port: 4090
+http_proxy: ""
+filter:
+  host:
+    - "example.com"
+    - "example2.com"
+  block_string:
+    - ""
+chrome: # if you are developing on local machine, you can keep these empty
+  remote_url: "" # use websocket url to connect to remote chrome
+  exec_path: "" # otherwise, use local chrome executable path if specified

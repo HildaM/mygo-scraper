@@ -1,4 +1,4 @@
-package scrape
+package filter
 
 import (
 	"regexp"
