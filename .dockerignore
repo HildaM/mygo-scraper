@@ -1,0 +1,9 @@
+output/
+web/
+
+.git
+.gitignore
+*.md
+
+.DS_Store
+*.tar.gz

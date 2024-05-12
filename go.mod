@@ -1,6 +1,6 @@
 module MyGo-scraper
 
-go 1.22.2
+go 1.18
 
 require (
 	github.com/JohannesKaufmann/html-to-markdown v1.5.0
