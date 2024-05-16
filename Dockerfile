@@ -25,7 +25,7 @@ COPY --from=builder /app/assets /app/assets
 COPY --from=builder /app/config /app/config
 COPY --from=builder /app/static /app/static
 
-RUN chmod +x /app/webscraper
+RUN chmod +x /app/mygo-scraper
 
 ENV CONFIG_ENV=prod
 
