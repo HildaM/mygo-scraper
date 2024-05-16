@@ -6,7 +6,7 @@ services:
       - 9222:9222
     networks:
       - network1
-  webscraper:
+  mygo-scraper:
     build: .
     ports:
       - 4090:4090
